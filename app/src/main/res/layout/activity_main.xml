@@ -11,6 +11,7 @@
     android:paddingStart="10dp"
     android:paddingEnd="10dp">
 
+    <!-- App Bar -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -46,6 +47,8 @@
 
     </RelativeLayout>
 
+
+    <!-- Search -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -92,6 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="190dp"
                 app:cardCornerRadius="20dp"
+                app:strokeWidth="0dp"
                 >
 
                 <ImageView
@@ -119,6 +123,7 @@
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         app:chipCornerRadius="25dp"
+                        app:chipStrokeWidth="0dp"
                         app:chipBackgroundColor="@android:color/holo_purple"/>
 
                     <com.google.android.material.chip.Chip
@@ -128,16 +133,7 @@
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         app:chipCornerRadius="25dp"
-                        android:layout_marginStart="10dp"
-                        app:chipBackgroundColor="@android:color/holo_purple"/>
-
-                    <com.google.android.material.chip.Chip
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="All"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        app:chipCornerRadius="25dp"
+                        app:chipStrokeWidth="0dp"
                         android:layout_marginStart="10dp"
                         app:chipBackgroundColor="@android:color/holo_purple"/>
 
@@ -148,6 +144,7 @@
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         app:chipCornerRadius="25dp"
+                        app:chipStrokeWidth="0dp"
                         android:layout_marginStart="10dp"
                         app:chipBackgroundColor="@android:color/holo_purple"/>
 
@@ -155,199 +152,14 @@
 
             </HorizontalScrollView>
 
-            <LinearLayout
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/frgProductList"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:orientation="horizontal"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 >
 
-                <LinearLayout
-                    android:id="@+id/itemFirst"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginEnd="5dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    >
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        app:cardCornerRadius="40dp"
-                        >
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/img_poster"
-                            android:scaleType="centerCrop"
-                            />
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="24sp"
-                        android:text="T-Shirt"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="10dp"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$25.00"
-                        android:textSize="18sp"
-                        android:layout_marginStart="20dp"
-                        android:textColor="@android:color/darker_gray"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_marginStart="5dp"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        app:cardCornerRadius="40dp"
-                        >
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/img_poster"
-                            android:scaleType="centerCrop"
-                            />
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="24sp"
-                        android:text="T-Shirt"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="10dp"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$25.00"
-                        android:textSize="18sp"
-                        android:layout_marginStart="20dp"
-                        android:textColor="@android:color/darker_gray"
-                        />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp"
-                >
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginEnd="5dp">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        app:cardCornerRadius="40dp"
-                        >
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/img_poster"
-                            android:scaleType="centerCrop"
-                            />
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="24sp"
-                        android:text="T-Shirt"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="10dp"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$25.00"
-                        android:textSize="18sp"
-                        android:layout_marginStart="20dp"
-                        android:textColor="@android:color/darker_gray"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_marginStart="5dp"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        app:cardCornerRadius="40dp"
-                        >
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/img_poster"
-                            android:scaleType="centerCrop"
-                            />
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="24sp"
-                        android:text="T-Shirt"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="10dp"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$25.00"
-                        android:textSize="18sp"
-                        android:layout_marginStart="20dp"
-                        android:textColor="@android:color/darker_gray"
-                        />
-
-                </LinearLayout>
-
-            </LinearLayout>
+            </androidx.fragment.app.FragmentContainerView>
 
         </LinearLayout>
 

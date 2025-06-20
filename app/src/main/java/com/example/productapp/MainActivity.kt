@@ -7,10 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.productapp.databinding.ActivityMainBinding
+import com.example.productapp.fragment.ProductListFragment
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private val productListFragment = ProductListFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,14 +21,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         binding.btnCart.setOnClickListener() {
             goToCardActivity()
         }
 
-        binding.itemFirst.setOnClickListener() {
-            goToProductDetail()
-        }
+        // show layout fragment
+        supportFragmentManager.beginTransaction().replace(binding.frgProductList.id, productListFragment).commit()
     }
 
     private fun goToCardActivity() {
