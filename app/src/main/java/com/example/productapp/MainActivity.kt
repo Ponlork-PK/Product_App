@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
         startActivity(intentData)
     }
 
-    private fun goToProductDetail() {
-        val intentData = Intent(this, ProductDetailActivity::class.java)
-        startActivity(intentData)
-    }
+//    private fun goToProductDetail() {
+//        val intentData = Intent(this, ProductDetailActivity::class.java)
+//        startActivity(intentData)
+//    }
 }

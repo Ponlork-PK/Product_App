@@ -36,13 +36,14 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="400dp"
         android:elevation="8dp"
         app:cardCornerRadius="40dp"
         app:cardElevation="8dp"
         >   <!-- android:background="@drawable/bg_img" -->
 
         <ImageView
+            android:id="@+id/imgProduct"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/img_poster"
@@ -69,28 +70,58 @@
             android:gravity="center_vertical">
 
             <TextView
+                android:id="@+id/txtProductName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="T-Shirt"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 />
 
             <TextView
+                android:id="@+id/txtProductPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="$250"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 />
 
         </LinearLayout>
 
         <TextView
+            android:id="@+id/txtOS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="OS"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/txtCPU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="CPU"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/txtMemory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Memory"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/txtScreenSize"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_marginTop="5dp"
-            android:text="This tee brings effortless comfort to any look, all day long. Crafted from a super-soft fabric, it's designed for ultimate wearability, whether you're chilling at home or out on the go."
+            android:text="screenSize"
             android:textSize="16sp"
             />
         

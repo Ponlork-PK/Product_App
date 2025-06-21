@@ -3,7 +3,15 @@ package com.example.productapp
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.example.productapp.ModelAPI.Product
+import com.example.productapp.ModelAPI.ProductDetail
+import com.example.productapp.Service.APIService
 import com.example.productapp.databinding.ActivityProductDetailsBinding
+import com.squareup.picasso.Picasso
+import kotlinx.coroutines.launch
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class ProductDetailActivity: AppCompatActivity() {
 
@@ -22,14 +30,18 @@ class ProductDetailActivity: AppCompatActivity() {
         binding.btnBack.setOnClickListener() {
             goBack()
         }
+
     }
 
-    private fun goToCardActivity() {
+    private fun goToCardActivity(){
         val intentData = Intent(this, CardActivity::class.java)
+
         startActivity(intentData)
     }
 
     private fun goBack() {
         finish()
     }
+
+
 }

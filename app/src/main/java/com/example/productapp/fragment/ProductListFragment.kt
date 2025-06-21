@@ -1,5 +1,6 @@
 package com.example.productapp.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,7 +9,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.productapp.CardActivity
 import com.example.productapp.ModelAPI.Product
+import com.example.productapp.ModelAPI.ProductDetail
+import com.example.productapp.ProductDetailActivity
 import com.example.productapp.Service.APIService
 import com.example.productapp.adapter.ProductAdapter
 import com.example.productapp.databinding.FragmentProductListBinding
@@ -26,6 +30,7 @@ class ProductListFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        // show layout fragment (UI)
         binding = FragmentProductListBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -43,8 +48,8 @@ class ProductListFragment: Fragment() {
 
         val apiService = retrofit.create(APIService::class.java)
         lifecycleScope.launch {
-            val productList = apiService.loadProductList()
-            Log.d("ITE", "Success: ${productList[0].name}")
+            val productList = apiService.getProductList()
+            // Log.d("ITE", "Success: ${productList[0].name}")
             showProductList(productList)
         }
     }
@@ -52,7 +57,20 @@ class ProductListFragment: Fragment() {
     private fun showProductList(productList: List<Product>) {
         val adapter = ProductAdapter(productList)
         val layoutManager = LinearLayoutManager(context)
+
+        adapter.onClickItemListener = { position ->
+            val product = productList[position]
+
+            goToProductDetailActivity()
+
+        }
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = layoutManager
+    }
+
+    private fun goToProductDetailActivity() {
+        val intentData = Intent(requireContext(), ProductDetailActivity::class.java)
+
+        startActivity(intentData)
     }
 }
